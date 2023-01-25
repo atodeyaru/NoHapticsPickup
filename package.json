@@ -1,0 +1,15 @@
+{
+    "name": "com.atodeyaru.nohapticspickup",
+    "displayName": "NoHapticsPickup",
+    "version": "0.1.0",
+    "unity": "2019.4",
+    "description": "U# Componets for pickup without haptics",
+    "author": {
+        "name": "あとでやる",
+        "url": "https://example.com/"
+    },
+    "documentationUrl": "https://example.com/",
+    "vpmDependencies": {
+        "com.vrchat.udonsharp": "1.1.x"
+    }
+}
