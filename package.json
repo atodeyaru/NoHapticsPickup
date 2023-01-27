@@ -6,9 +6,9 @@
     "description": "U# Componets for pickup without haptics",
     "author": {
         "name": "あとでやる",
-        "url": "https://example.com/"
+        "url": "https://github.com/atodeyaru"
     },
-    "documentationUrl": "https://example.com/",
+    "documentationUrl": "https://github.com/atodeyaru/NoHapticsPickup",
     "vpmDependencies": {
         "com.vrchat.udonsharp": "1.1.x"
     }
