@@ -7,7 +7,7 @@ using VRC.Udon.Common;
 namespace Atodeyaru.Udon
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
-    public class PickupHand : UdonSharpBehaviour
+    public class NHP_HandTracker : UdonSharpBehaviour
     {
         [SerializeField] private LayerMask _layerMask = int.MaxValue;
         [SerializeField] private float _pickupRadius = 0.05f;
@@ -30,12 +30,12 @@ namespace Atodeyaru.Udon
                     var hand = Networking.LocalPlayer.GetTrackingData(left ? VRCPlayerApi.TrackingDataType.LeftHand : VRCPlayerApi.TrackingDataType.RightHand);
                     var colliders = Physics.OverlapSphere(hand.position, _pickupRadius, _layerMask, QueryTriggerInteraction.Collide);
 
-                    NoHapticsPickup pickup;
+                    NHP_NoHapticsPickup pickup;
                     foreach (var collider in colliders)
                     {
                         if (collider == null) continue;
 
-                        pickup = collider.GetComponent<NoHapticsPickup>();
+                        pickup = collider.GetComponent<NHP_NoHapticsPickup>();
                         if (pickup != null)
                         {
                             pickup.Grab(left);
@@ -49,12 +49,12 @@ namespace Atodeyaru.Udon
                     
                     var hits = Physics.RaycastAll(head.position, head.rotation * Vector3.forward, _desktopPickupRadius, _layerMask, QueryTriggerInteraction.Collide);
 
-                    NoHapticsPickup pickup;
+                    NHP_NoHapticsPickup pickup;
                     foreach (var hit in hits)
                     {
                         if (hit.collider == null) continue;
 
-                        pickup = hit.collider.gameObject.GetComponent<NoHapticsPickup>();
+                        pickup = hit.collider.gameObject.GetComponent<NHP_NoHapticsPickup>();
                         if (pickup != null)
                         {
                             pickup.Grab(false);

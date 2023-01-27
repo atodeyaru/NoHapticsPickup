@@ -7,7 +7,7 @@ using VRC.Udon.Common;
 namespace Atodeyaru.Udon
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.Continuous)]
-    public class NoHapticsPickup : UdonSharpBehaviour
+    public class NHP_NoHapticsPickup : UdonSharpBehaviour
     {
         [SerializeField] private Transform _exactGrip;
         [SerializeField] private bool _AutoHold;
